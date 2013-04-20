@@ -101,12 +101,12 @@ unless RBeautify::Language.language(:ruby)
     end
   end
 
-  ruby.add_matcher(:curly_bracket,
-                   /\{\s*/,
-                   /\}/,
-                   :indent_end_line => bracket_indent_end_line_proc,
-                   :indent_size => bracket_indent_size_proc,
-                   :nest_except => [:double_quote, :regex, :backtick])
+  #ruby.add_matcher(:curly_bracket,
+  #                 /\{\s*/,
+  #                 /\}/,
+  #                 :indent_end_line => bracket_indent_end_line_proc,
+  #                 :indent_size => bracket_indent_size_proc,
+  #                 :nest_except => [:double_quote, :regex, :backtick])
 
   ruby.add_matcher(:round_bracket,
                    /\(\s*/,

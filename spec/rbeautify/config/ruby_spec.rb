@@ -46,19 +46,18 @@ describe 'Ruby' do
       it { @current_block.parse_block_end('a = 3', 0).should be_nil }
     end
 
-    describe 'curly_bracket' do
-      before(:each) do
-        @matcher = @ruby.matcher(:curly_bracket)
-        @current_block = RBeautify::BlockStart.new(@matcher, nil, 0, 0, '{', '')
-      end
-
-      it { @matcher.parse_block_start('{', nil, 0, 0).should be_block_start_like(:curly_bracket, 0, '{', '') }
-      it { @matcher.parse_block_start('end', nil, 0, 0).should be_nil }
-
-      it { @current_block.parse_block_end('}', 0).should be_block_end_like(@current_block, 0, '}', '') }
-      it { @current_block.parse_block_end('end', 0).should be_nil }
-
-    end
+    #describe 'curly_bracket' do
+    #  before(:each) do
+    #    @matcher = @ruby.matcher(:curly_bracket)
+    #    @current_block = RBeautify::BlockStart.new(@matcher, nil, 0, 0, '{', '')
+    #  end
+    #
+    #  it { @matcher.parse_block_start('{', nil, 0, 0).should be_block_start_like(:curly_bracket, 0, '{', '') }
+    #  it { @matcher.parse_block_start('end', nil, 0, 0).should be_nil }
+    #
+    #  it { @current_block.parse_block_end('}', 0).should be_block_end_like(@current_block, 0, '}', '') }
+    #  it { @current_block.parse_block_end('end', 0).should be_nil }
+    #end
 
     describe 'double_quote' do
       before(:each) do

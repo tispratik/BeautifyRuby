@@ -18,13 +18,13 @@ describe RBeautify::BlockMatcher do
         block.name.should == :standard
       end
 
-      it 'should be nested block' do
-        block = RBeautify::BlockMatcher.parse(@ruby, nil, 0, 'if {', 0)
-        block.should_not be_nil
-        block.name.should == :curly_bracket
-        block.parent.should_not be_nil
-        block.parent.name.should == :if
-      end
+      #it 'should be nested block' do
+      #  block = RBeautify::BlockMatcher.parse(@ruby, nil, 0, 'if {', 0)
+      #  block.should_not be_nil
+      #  block.name.should == :curly_bracket
+      #  block.parent.should_not be_nil
+      #  block.parent.name.should == :if
+      #end
 
       it 'should be nested block (taking into account ends)' do
         block = RBeautify::BlockMatcher.parse(@ruby, nil, 0, 'if {}', 0)

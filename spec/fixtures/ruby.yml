@@ -132,7 +132,7 @@
     second_arg,
     # Comment in the middle of all this
     third_arg
-    
+
     another_method_call
     end
   output: |
@@ -141,7 +141,7 @@
         second_arg,
         # Comment in the middle of all this
         third_arg
-    
+
       another_method_call
     end
 
@@ -151,7 +151,7 @@
     multiline_method_call.
     foo.
     bar
-    
+
     another_method_call
     end
   output: |
@@ -159,7 +159,7 @@
       multiline_method_call.
         foo.
         bar
-    
+
       another_method_call
     end
 
@@ -261,27 +261,27 @@
       ]
     end
 
-- name: indent multiline hash definition
-  input: |
-    class Foo
-    @@bar = { :foo => 1, :bar => 2
-    :c => 3, :d => 4 }
-    end
-  output: |
-    class Foo
-      @@bar = { :foo => 1, :bar => 2
-                :c => 3, :d => 4 }
-    end
-
-- name: indent multiline block delimited with curly brackets
-  input: |
-    foo = bar.collect { |paragraph|
-    paragraph.strip
-    }.join("\n")
-  output: |
-    foo = bar.collect { |paragraph|
-      paragraph.strip
-    }.join("\n")
+#- name: indent multiline hash definition
+#  input: |
+#    class Foo
+#    @@bar = { :foo => 1, :bar => 2
+#    :c => 3, :d => 4 }
+#    end
+#  output: |
+#    class Foo
+#      @@bar = { :foo => 1, :bar => 2
+#                :c => 3, :d => 4 }
+#    end
+#
+#- name: indent multiline block delimited with curly brackets
+#  input: |
+#    foo = bar.collect { |paragraph|
+#    paragraph.strip
+#    }.join("\n")
+#  output: |
+#    foo = bar.collect { |paragraph|
+#      paragraph.strip
+#    }.join("\n")
 
 - name: indent method call with bracketed multiline arguments including continuing statements
   pending: Implementation of support for continuing statements in bracketed multline arguments
